@@ -19,8 +19,8 @@ function App() {
   return (
   <div>
     <h2>Expenses</h2>
-      <ExpenseItem {...expenses[0]}/>      
-      <ExpenseItem {...expenses[1]}/>
+      <ExpenseItem {...expenses[0]}></ExpenseItem>   
+      <ExpenseItem {...expenses[1]}></ExpenseItem>   
   </div>
   );
 
