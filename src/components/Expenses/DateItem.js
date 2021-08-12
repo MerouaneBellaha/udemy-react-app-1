@@ -1,6 +1,6 @@
 import "./DateItem.css";
 
-function DateItem(props) {
+const DateItem = (props) => {
 
   const month = "month";
   const day = "day";
