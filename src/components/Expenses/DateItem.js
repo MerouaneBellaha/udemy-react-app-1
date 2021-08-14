@@ -1,15 +1,10 @@
 import "./DateItem.css";
 
 const DateItem = (props) => {
-
-  const month = "month";
-  const day = "day";
-  const year = "year";
-/* 
-  ?? Got error for those functions ??
+  
   const month = props.date.toLocaleString('en-US', { month: 'long' });
   const day = props.date.toLocaleString('en-US', { day: '2-digit' });
-  const year = props.date.getFullYear(); */
+  const year = props.date.getFullYear();
 
   return (
     <div className='expense-date'>

@@ -8,8 +8,8 @@ const Expenses = (props) => {
     <Card className='expenses'>
       <h2>Expenses</h2>
 {/*  why props[0] is undefined ? How to pass an array as props from parent component */}
-        <ExpenseItem {...props[0]}></ExpenseItem>   
-        <ExpenseItem {...props[1]}></ExpenseItem>   
+        <ExpenseItem expense={props.expenses[0]}></ExpenseItem>   
+        <ExpenseItem expense={props.expenses[1]}></ExpenseItem>   
     </Card>
   );
 }
