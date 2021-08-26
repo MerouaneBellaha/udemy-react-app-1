@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import "./ExpenseForm.css";
+import "./ExpenseForm.scss";
+import Bem from "../helpers/bem";
 
 const ExpenseForm = (props) => {
+
+  const bem = Bem('new-expense')
+
   const [userInput, setUserInput] = useState({
     enteredTitle: "",
     enteredAmount: "",
@@ -9,46 +13,23 @@ const ExpenseForm = (props) => {
   });
 
   const inputChangeHandler = event => {
-      console.log(event.target.name)
-      console.log(event.target.value)
     setUserInput({
         ...userInput,
         [event.name]: event.target.value,
       });
   }
-/* 
-  const titleChangeHandler = (event) => {
-   
-    updateSpecificInput("enteredTitle", event.target.value);
-  };
-
-  const amountChangeHandler = (event) => {
-    updateSpecificInput("enteredAmount", event.target.value);
-  };
-
-  const dateChangeHandler = (event) => {
-    updateSpecificInput("enteredDate", event.target.value);
-  };
-
-  const updateSpecificInput = (name, value) => {
-    console.log(name + value);
-    setUserInput({
-      ...userInput,
-      [name]: value,
-    });
-  }; */
 
   return (
     <form>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+      <div className={bem('controls')}>
+        <div className={bem('control')}>
           <label>Title</label>
           <input 
           name="enteredTitle"
           onChange={inputChangeHandler} type="text" />
         </div>
 
-        <div className="new-expense__control">
+        <div className={bem('control')}>
           <label>Amount</label>
           <input
             onChange={inputChangeHandler}
@@ -59,7 +40,7 @@ const ExpenseForm = (props) => {
           />
         </div>
 
-        <div className="new-expense__control">
+        <div className={bem('control')}>
           <label>Date</label>
           <input
             onChange={inputChangeHandler}
@@ -70,7 +51,7 @@ const ExpenseForm = (props) => {
           />
         </div>
 
-        <div className="new-expense__actions">
+        <div className={bem('actions')}>
           <button type="submit">Add Expense</button>
         </div>
       </div>

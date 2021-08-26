@@ -1,11 +1,14 @@
 import React from "react";
 import ExpenseForm from "./ExpenseForm";
+import Bem from "../helpers/bem";
+import './NewExpense.scss'
 
-import './NewExpense.css'
+const NewExpense = () => {
 
-const NewExpense = (props) => {
+    const bem = Bem('new-expense')
+
     return (
-        <div className="new-expense">
+        <div className={bem()}>
             <ExpenseForm></ExpenseForm>
         </div>
     )

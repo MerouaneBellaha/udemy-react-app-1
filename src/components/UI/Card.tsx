@@ -1,6 +1,6 @@
-import "./Card.css"
+import "./Card.scss"
 
-const Card = (props) => {
+const Card: Function = (props: {className: string, children: JSX.Element[]}) => {
     const classes = 'card ' + props.className
     return <div className={classes}>{props.children}</div>
 }

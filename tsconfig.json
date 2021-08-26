@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "target": "ES2018",
+    "module": "esnext",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "composite": true,
+    "emitDecoratorMetadata": false,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "exclude": [
+    "node_modules",
+    "**/*/dist/**/*"
+  ],
+  "include": [
+    "src"
+  ]
+}
