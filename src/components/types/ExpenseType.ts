@@ -1,6 +1,7 @@
 
 export type ExpenseProps = {
-    expense: ExpenseType[]
+    expenses?: ExpenseType[]
+    expense?: ExpenseType
 }
 
 export type ExpenseType = {

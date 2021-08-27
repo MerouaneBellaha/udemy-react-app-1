@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./ExpenseForm.scss";
 import Bem from "../helpers/bem";
+import { InputChangeEvent } from "../types/InputChangeEvent";
 
-const ExpenseForm = (props) => {
+const ExpenseForm = () => {
 
   const bem = Bem('new-expense')
 
@@ -12,10 +13,10 @@ const ExpenseForm = (props) => {
     enteredDate: "",
   });
 
-  const inputChangeHandler = event => {
+  const inputChangeHandler = (event: InputChangeEvent<HTMLInputElement>) => {
     setUserInput({
         ...userInput,
-        [event.name]: event.target.value,
+        [event.name as string]: event.target.value,
       });
   }
 

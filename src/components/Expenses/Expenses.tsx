@@ -1,16 +1,19 @@
 import ExpenseItem from "./ExpenseItem";
 import Card  from "../UI/Card";
-import "./Expenses.css";
+import "./Expenses.scss";
 import { FunctionComponent } from "react";
-import { ExpenseProps } from "../types/ExpenseType";
+import { ExpenseProps, ExpenseType } from "../types/ExpenseType";
+import Bem from "../helpers/bem";
 
 const Expenses: FunctionComponent<ExpenseProps> = (props) => {
 
+  const bem = Bem('expenses')
+
   return (
-    <Card className='expenses'>
+    <Card className={bem()}>
       <h2>Expenses</h2>
-         { props.expense.map((expense) =>
-         <ExpenseItem expense={expense}></ExpenseItem>
+         { (props.expenses as ExpenseType[]).map((expense) =>
+         <ExpenseItem expenses={[expense]}></ExpenseItem>
          )}
     </Card>
   ); 

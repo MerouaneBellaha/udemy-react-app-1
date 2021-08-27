@@ -1,21 +1,27 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 
 import DateItem from "./DateItem";
 import Card from "../UI/Card";
 import "./ExpenseItem.scss";
 import Bem from "../helpers/bem";
+import { ExpenseProps, ExpenseType } from "../types/ExpenseType";
 
 
-const ExpenseItem = (props) => {
+const ExpenseItem: FunctionComponent<ExpenseProps> = (props) => {
+
+/*   const ExpenseItem = (props: ExpenseProps) => { */
+
   /* this shits hook, hook starts with use, can only be called inside React component function 
   return an array of 2 items [value, udpating function]
    -> array destructuring const [naming returned items in array] = function(): []
    const [describedValue, setDescribedValue] convention
   */
+  const expense: ExpenseType = props.expense as ExpenseType
 
-  const [title, setTitle] = useState(props.expense.title)
+/*   const [title, setTitle] = useState((props.expense as ExpenseType).title) */
+const [title, setTitle] = useState(expense.title)
 
-    const changeTitleOnClick = () => {
+  const changeTitleOnClick = () => {
     setTitle('updated')
   }
 
@@ -23,10 +29,10 @@ const ExpenseItem = (props) => {
 
   return (
     <Card className={bem()}>
-      <DateItem date={props.expense.date}></DateItem>
+      <DateItem date={expense.date}></DateItem>
       <div className={bem('description')}>
         <h2>{title}</h2>
-        <div className={bem('price')}>{props.expense.amount}</div>
+        <div className={bem('price')}>{expense.amount}</div>
         <button onClick={changeTitleOnClick}>Change title</button>
       </div>
     </Card>
