@@ -12,10 +12,11 @@ const ExpenseForm = () => {
   });
 
   const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setUserInput({
-      ...userInput,
-      [event.target.name]: event.target.value,
-    });
+    setUserInput((previousState) => {
+      return { 
+        ...previousState,
+        [event.target.name]: event.target.value}
+    })
   };
 
   return (
