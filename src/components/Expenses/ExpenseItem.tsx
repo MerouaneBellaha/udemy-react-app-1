@@ -4,7 +4,7 @@ import DateItem from "./DateItem/DateItem";
 import Card from "../UI/Card";
 import "./ExpenseItem.scss";
 import Bem from "../helpers/bem";
-import { ExpenseItemProps, ExpenseType } from "../types/ExpenseType";
+import { ExpenseItemProps } from "../types/ExpenseType";
 
 const ExpenseItem: FunctionComponent<ExpenseItemProps> = (props) => {
 

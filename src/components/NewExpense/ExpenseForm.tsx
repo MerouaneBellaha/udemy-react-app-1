@@ -1,11 +1,7 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, Component, FormEvent, useState } from "react";
 import "./ExpenseForm.scss";
 import Bem from "../helpers/bem";
 import { ExpenseDataType } from "./ExpenseDataType";
-
-
-/* TODO: Invalid date on console.log ? */
-
 
 const ExpenseForm = () => {
   const bem = Bem("new-expense");
@@ -31,8 +27,6 @@ const ExpenseForm = () => {
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate)
     }
-
-    console.log(expenseData)
   }
 
   return (
@@ -62,7 +56,7 @@ const ExpenseForm = () => {
           <label>Date</label>
           <input
             onChange={inputChangeHandler}
-            name='entereDate'
+            name='enteredDate'
             type='date'
             min='2019-01-01'
             max='2022-12-31'
