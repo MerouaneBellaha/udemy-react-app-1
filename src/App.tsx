@@ -1,8 +1,16 @@
 import Expenses from "./components/Expenses/Expenses/Expenses";
 import { ExpenseType } from "./components/types/ExpenseType";
 import NewExpense from "./components/NewExpense/NewExpense";
+import { useState } from "react";
+import { ExpenseDataType } from "./components/NewExpense/ExpenseDataType"
 
 const App = () => {
+
+
+  // const [userExpenseData, setUserExpenseData] = useState({
+  //   userExpenseData: []
+  // });
+
   const expenses: Array<ExpenseType> = [
     {
       id: "e1",

@@ -1,9 +1,10 @@
-import React, { ChangeEvent, Component, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, FunctionComponent, useState } from "react";
 import "./ExpenseForm.scss";
 import Bem from "../helpers/bem";
 import { ExpenseDataType } from "./ExpenseDataType";
+import { ExpenseFormProps } from "./ExpenseFormProps";
 
-const ExpenseForm = () => {
+const ExpenseForm: FunctionComponent<ExpenseFormProps> = (props) => {
   const bem = Bem("new-expense");
 
   const [userInput, setUserInput] = useState({
@@ -27,6 +28,18 @@ const ExpenseForm = () => {
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate)
     }
+    resetInputs()
+    props.onSaveExpenseData(expenseData)
+  }
+
+  const resetInputs = () => {
+    setUserInput((_) => {
+      return {
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: ''
+      }
+    })
   }
 
   return (
@@ -38,6 +51,7 @@ const ExpenseForm = () => {
             name='enteredTitle'
             onChange={inputChangeHandler}
             type='text'
+            value={userInput.enteredTitle}
           />
         </div>
 
@@ -47,6 +61,7 @@ const ExpenseForm = () => {
             onChange={inputChangeHandler}
             name='enteredAmount'
             type='number'
+            value={userInput.enteredAmount}
             min='O.O1'
             step='O.O1'
           />
@@ -58,6 +73,7 @@ const ExpenseForm = () => {
             onChange={inputChangeHandler}
             name='enteredDate'
             type='date'
+            value={userInput.enteredDate}
             min='2019-01-01'
             max='2022-12-31'
           />
