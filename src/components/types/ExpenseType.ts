@@ -1,8 +1,8 @@
 export type ExpenseType = {
-    id: string
     title: string
     date: Date
     amount: number
+    id: string
 }
 
 export type ExpenseItemProps = {

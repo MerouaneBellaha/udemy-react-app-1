@@ -28,8 +28,8 @@ const ExpenseForm: FunctionComponent<ExpenseFormProps> = (props) => {
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate)
     }
-    resetInputs()
     props.onSaveExpenseData(expenseData)
+    resetInputs()
   }
 
   const resetInputs = () => {

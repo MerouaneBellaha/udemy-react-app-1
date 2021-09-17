@@ -6,11 +6,6 @@ import { ExpenseDataType } from "./components/NewExpense/ExpenseDataType"
 
 const App = () => {
 
-
-  // const [userExpenseData, setUserExpenseData] = useState({
-  //   userExpenseData: []
-  // });
-
   const expenses: Array<ExpenseType> = [
     {
       id: "e1",
@@ -26,10 +21,14 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense: ExpenseType) => {
+    
+  }
+
   return (
     <div>
       <Expenses expenses={expenses}></Expenses>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
     </div>
   );
 };

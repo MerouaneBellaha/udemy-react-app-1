@@ -4,16 +4,20 @@ import Bem from "../helpers/bem";
 import './NewExpense.scss'
 import { ExpenseDataType } from "./ExpenseDataType";
 import { ExpenseFormProps } from "./ExpenseFormProps";
+import { ExpenseType } from "../types/ExpenseType";
+import { NewExpenseProps } from "./NewExpenseProps";
 
-const NewExpense = () => {
+const NewExpense: FunctionComponent<NewExpenseProps> = (props) => {
 
     const bem = Bem('new-expense')
 
     const saveExpenseDataHandler = (newExpenseData: ExpenseDataType) => {
-        const expenseData = {
+        const expenseData: ExpenseType = {
             ...newExpenseData,
-            id: Math.random().toString
+            amount: parseFloat(newExpenseData.amount),
+            id: Math.random().toFixed()
         }
+        props.onAddExpense(expenseData)
     }
 
     return (
